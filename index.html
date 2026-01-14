@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Pack Réussite Examen Civique 2026 - Devenez Français</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Préparez l'examen civique 2026 et la naturalisation française avec un ebook complet et une application d'entraînement.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --french-blue: #0055A4;
+            --french-blue-dark: #003d7a;
+            --french-blue-light: #2176C7;
+            --french-red: #EF4135;
+            --french-white: #FFFFFF;
+            --navy: #0a1e42;
+            --navy-light: #1a2f5a;
+            --accent-blue: #3b82f6;
+            --accent-light: #60a5fa;
+            --success: #10b981;
+            --danger: #ef4444;
+            --text: #f1f5f9;
+            --text-muted: #94a3b8;
+            --white: #ffffff;
+            --gray-bg: #f8fafc;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'DM Sans', system-ui, sans-serif;
+            background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+            color: #1e293b;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Hero Gradient Background */
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at top center, rgba(0, 85, 164, 0.08), transparent 60%),
+                radial-gradient(ellipse at bottom right, rgba(59, 130, 246, 0.06), transparent 60%);
+            z-index: 0;
+        }
+        
+        /* French flag accent */
+        .french-accent {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--french-blue) 0%, var(--french-blue) 33.33%, var(--french-white) 33.33%, var(--french-white) 66.66%, var(--french-red) 66.66%, var(--french-red) 100%);
+            z-index: 1000;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Navigation */
+        nav {
+            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 85, 164, 0.1);
+            box-shadow: 0 2px 20px rgba(0, 85, 164, 0.05);
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--french-blue);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo-flag {
+            font-size: 28px;
+        }
+        
+        .nav-cta {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+        
+        /* Buttons */
+        .btn {
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            display: inline-block;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary {
+            background: var(--french-blue);
+            color: white;
+            box-shadow: 0 4px 20px rgba(0, 85, 164, 0.25);
+        }
+        
+        .btn-primary:hover {
+            background: var(--french-blue-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 85, 164, 0.35);
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: var(--french-blue);
+            border: 2px solid var(--french-blue);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--french-blue);
+            color: white;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 100px;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 24px;
+            background: linear-gradient(135deg, rgba(0, 85, 164, 0.1), rgba(239, 65, 53, 0.08));
+            border: 2px solid var(--french-blue);
+            border-radius: 50px;
+            color: var(--french-blue);
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            animation: fadeInDown 0.8s ease-out;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(0, 85, 164, 0.15);
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(42px, 6vw, 68px);
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            color: var(--french-blue);
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+        
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--french-blue), var(--french-red), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-subtitle {
+            font-size: 20px;
+            color: #475569;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+        
+        .hero-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            margin-top: 80px;
+            animation: fadeInUp 0.8s ease-out 0.8s both;
+        }
+        
+        .hero-feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            padding: 24px;
+            background: linear-gradient(135deg, rgba(0, 85, 164, 0.03), rgba(255, 255, 255, 0.8), rgba(239, 65, 53, 0.03));
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 85, 164, 0.08);
+            border: 2px solid rgba(0, 85, 164, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .hero-feature:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 85, 164, 0.15);
+            border-color: var(--french-blue);
+        }
+        
+        .hero-feature-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--french-blue), var(--french-red));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            box-shadow: 0 4px 15px rgba(0, 85, 164, 0.3);
+        }
+        
+        .hero-feature-text {
+            color: #1e293b;
+            font-weight: 600;
+            font-size: 15px;
+            text-align: center;
+        }
+        
+        /* Stats Section */
+        .stats {
+            background: linear-gradient(135deg, var(--french-blue), var(--french-blue-dark));
+            padding: 80px 0;
+            margin: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 60px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-label {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(36px, 5vw, 52px);
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: var(--french-blue);
+        }
+        
+        .section-subtitle {
+            font-size: 18px;
+            color: #475569;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px;
+        }
+        
+        .feature-card {
+            background: white;
+            border: 2px solid rgba(0, 85, 164, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--french-blue) 0%, var(--french-red) 50%, var(--french-blue) 100%);
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--french-blue);
+            box-shadow: 0 20px 50px rgba(0, 85, 164, 0.15);
+        }
+        
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--french-blue) 0%, var(--french-red) 50%, var(--accent-blue) 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 20px rgba(0, 85, 164, 0.2);
+        }
+        
+        .feature-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--french-blue);
+        }
+        
+        .feature-description {
+            color: #475569;
+            line-height: 1.7;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .feature-list li {
+            padding: 10px 0;
+            color: #475569;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+        }
+        
+        .feature-list li::before {
+            content: '✓';
+            color: var(--french-blue);
+            font-weight: bold;
+            font-size: 18px;
+            width: 24px;
+            height: 24px;
+            background: rgba(0, 85, 164, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(0, 85, 164, 0.03), rgba(255, 255, 255, 0.95), rgba(239, 65, 53, 0.02));
+        }
+        
+        .pricing-card {
+            max-width: 650px;
+            margin: 0 auto;
+            background: white;
+            border: 3px solid transparent;
+            background-image: 
+                linear-gradient(white, white),
+                linear-gradient(135deg, var(--french-blue) 0%, var(--french-red) 50%, var(--french-blue) 100%);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            border-radius: 24px;
+            padding: 60px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 85, 164, 0.15);
+        }
+        
+        .pricing-badge {
+            position: absolute;
+            top: 32px;
+            right: 32px;
+            background: linear-gradient(135deg, var(--french-red) 0%, #dc2626 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(239, 65, 53, 0.4);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .pricing-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 16px;
+            color: var(--french-blue);
+        }
+        
+        .pricing-price {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .pricing-amount {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--french-blue), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .pricing-description {
+            color: #475569;
+            font-size: 16px;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin: 40px 0;
+        }
+        
+        .pricing-features li {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(0, 85, 164, 0.1);
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            font-size: 15px;
+            color: #1e293b;
+        }
+        
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .pricing-check {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, var(--french-blue) 0%, var(--french-red) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0, 85, 164, 0.2);
+        }
+        
+        .pricing-cta {
+            text-align: center;
+        }
+        
+        .pricing-cta .btn-primary {
+            width: 100%;
+            padding: 18px 32px;
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+        
+        .pricing-guarantee {
+            text-align: center;
+            color: #475569;
+            font-size: 14px;
+            margin-top: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        /* QCM App */
+        #qcm-app {
+            display: none;
+            max-width: 900px;
+            margin: 80px auto;
+            background: white;
+            border: 2px solid rgba(0, 85, 164, 0.2);
+            border-radius: 24px;
+            padding: 60px;
+            box-shadow: 0 20px 60px rgba(0, 85, 164, 0.1);
+        }
+        
+        #qcm-app.active {
+            display: block;
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        #qcm-app h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--french-blue);
+        }
+        
+        .mode-selection {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        
+        .mode-btn {
+            padding: 32px 24px;
+            background: white;
+            border: 2px solid rgba(0, 85, 164, 0.2);
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        
+        .mode-btn:hover {
+            background: linear-gradient(135deg, rgba(0, 85, 164, 0.08), rgba(239, 65, 53, 0.05));
+            border-color: var(--french-blue);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 85, 164, 0.15);
+        }
+        
+        .mode-btn-icon {
+            font-size: 40px;
+            margin-bottom: 16px;
+        }
+        
+        .mode-btn-title {
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: var(--french-blue);
+        }
+        
+        .mode-btn-desc {
+            font-size: 14px;
+            color: #475569;
+        }
+        
+        .question {
+            background: rgba(0, 85, 164, 0.03);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 32px;
+        }
+        
+        .question h3 {
+            color: var(--french-blue);
+            margin-bottom: 24px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        
+        .question p {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 32px;
+            color: #1e293b;
+        }
+        
+        .option {
+            background: white;
+            border: 2px solid rgba(0, 85, 164, 0.15);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 16px;
+            color: #1e293b;
+        }
+        
+        .option:hover {
+            background: rgba(0, 85, 164, 0.05);
+            border-color: var(--french-blue);
+            transform: translateX(8px);
+        }
+        
+        .option.correct {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: var(--success);
+            color: var(--success);
+            font-weight: 600;
+        }
+        
+        .option.incorrect {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: var(--danger);
+            color: var(--danger);
+            font-weight: 600;
+        }
+        
+        .info-box {
+            background: rgba(0, 85, 164, 0.08);
+            border: 2px solid rgba(0, 85, 164, 0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 24px;
+            font-size: 15px;
+            color: #1e293b;
+            line-height: 1.7;
+        }
+        
+        #timer {
+            position: fixed;
+            top: 120px;
+            right: 32px;
+            background: white;
+            border: 3px solid var(--french-blue);
+            border-radius: 16px;
+            padding: 16px 28px;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--french-blue);
+            box-shadow: 0 8px 32px rgba(0, 85, 164, 0.2);
+        }
+        
+        #score {
+            text-align: center;
+            padding: 60px;
+            background: linear-gradient(135deg, rgba(0, 85, 164, 0.05), rgba(59, 130, 246, 0.05));
+            border-radius: 24px;
+            margin: 40px 0;
+            border: 2px solid rgba(0, 85, 164, 0.1);
+        }
+        
+        #score h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            margin-bottom: 24px;
+            color: var(--french-blue);
+        }
+        
+        #reset {
+            display: none;
+            text-align: center;
+            margin-top: 32px;
+            gap: 16px;
+            justify-content: center;
+        }
+        
+        #reset.active {
+            display: flex;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 60px 0 40px;
+            background: linear-gradient(135deg, var(--french-blue) 0%, var(--french-blue-dark) 50%, rgba(239, 65, 53, 0.9) 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        footer p {
+            margin-bottom: 12px;
+            opacity: 0.9;
+        }
+        
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+        
+        footer a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .french-accent {
+                height: 3px;
+            }
+            
+            .hero {
+                padding: 60px 0 80px;
+            }
+            
+            .hero-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-card {
+                padding: 40px 24px;
+            }
+            
+            .pricing-badge {
+                top: 16px;
+                right: 16px;
+                font-size: 11px;
+                padding: 8px 16px;
+            }
+            
+            #qcm-app {
+                padding: 32px 20px;
+            }
+            
+            #timer {
+                top: 80px;
+                right: 16px;
+                padding: 12px 20px;
+                font-size: 18px;
+            }
+            
+            .nav-cta {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .stat-number {
+                font-size: 42px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="french-accent"></div>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <span class="logo-flag">🇫🇷</span>
+                    Réussite Civique
+                </div>
+                <div class="nav-cta">
+                    <button class="btn btn-secondary" onclick="showQCM()">Essai Gratuit</button>
+                    <a href="https://payhip.com/b/vnYkg" class="btn btn-primary" target="_blank">Acheter Maintenant</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="badge">
+                    ⚡ Préparation Examen Civique 2026
+                </div>
+                <h1>Devenez <span class="highlight">Français</span> ou obtenez votre <span class="highlight">Titre de Séjour Pluriannuel</span> en toute Confiance</h1>
+                <p class="hero-subtitle">
+                    Le pack complet pour réussir votre examen civique à 80% minimum et sécuriser votre naturalisation ou carte de résident. 
+                    Ebook professionnel + Application d'entraînement interactive avec 105 questions couvrant tous les thèmes officiels 2026.
+                </p>
+                <div class="hero-cta">
+                    <button class="btn btn-primary" onclick="showQCM()">🚀 Commencer Gratuitement</button>
+                    <a href="https://payhip.com/b/vnYkg" class="btn btn-secondary" target="_blank">Acheter le Pack Complet</a>
+                </div>
+                <div class="hero-features">
+                    <div class="hero-feature">
+                        <div class="hero-feature-icon">📚</div>
+                        <div class="hero-feature-text">105 Questions Complètes</div>
+                    </div>
+                    <div class="hero-feature">
+                        <div class="hero-feature-icon">📘</div>
+                        <div class="hero-feature-text">Cours Complets PDF</div>
+                    </div>
+                    <div class="hero-feature">
+                        <div class="hero-feature-icon">🎯</div>
+                        <div class="hero-feature-text">Examens Blancs</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat">
+                    <div class="stat-number">105</div>
+                    <div class="stat-label">Questions d'entraînement</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">80%</div>
+                    <div class="stat-label">Taux de réussite requis</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Thèmes officiels couverts</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">45 min</div>
+                    <div class="stat-label">Durée de l'examen</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- QCM App -->
+    <div class="container">
+        <div id="qcm-app">
+            <h2>📚 Entraînement QCM Gratuit</h2>
+            <div class="mode-selection">
+                <div class="mode-btn" onclick="startExamen()">
+                    <div class="mode-btn-icon">🎯</div>
+                    <div class="mode-btn-title">Mode Examen</div>
+                    <div class="mode-btn-desc">35 questions • 25 minutes chronométrées</div>
+                </div>
+                <div class="mode-btn" onclick="startApprentissage()">
+                    <div class="mode-btn-icon">📖</div>
+                    <div class="mode-btn-title">Mode Apprentissage</div>
+                    <div class="mode-btn-desc">Toutes les questions • Sans limite de temps</div>
+                </div>
+            </div>
+            <div id="timer"></div>
+            <div id="question-container"></div>
+            <div id="score"></div>
+            <div id="reset">
+                <button class="btn btn-primary" onclick="reset(); showQCM();">🔄 Recommencer</button>
+                <button class="btn btn-secondary" onclick="hideQCM()">Retour à l'accueil</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Tout ce dont vous avez besoin pour réussir</h2>
+                <p class="section-subtitle">Une préparation complète et structurée pour maximiser vos chances de succès à l'examen civique</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📘</div>
+                    <h3 class="feature-title">Ebook PDF Complet</h3>
+                    <p class="feature-description">
+                        Guide professionnel couvrant les 5 thèmes officiels avec explications claires, exemples concrets et vocabulaire adapté.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Principes et valeurs de la République</li>
+                        <li>Institutions françaises et européennes</li>
+                        <li>Droits et devoirs du citoyen</li>
+                        <li>Histoire et géographie de France</li>
+                        <li>Vivre en France aujourd'hui</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💻</div>
+                    <h3 class="feature-title">Application Interactive</h3>
+                    <p class="feature-description">
+                        Entraînez-vous avec des QCM et examens blancs chronométrés dans les conditions réelles de l'examen officiel.
+                    </p>
+                    <ul class="feature-list">
+                        <li>105 questions complètes couvrant tous les thèmes</li>
+                        <li>Corrections détaillées instantanées</li>
+                        <li>Examens blancs chronométrés</li>
+                        <li>Suivi de votre progression</li>
+                        <li>Mode révision par thème</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title">Préparation Optimale</h3>
+                    <p class="feature-description">
+                        Méthodologie éprouvée et plan de révision structuré sur 6 semaines pour arriver prêt et confiant le jour J.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Plan de révision structuré 6 semaines</li>
+                        <li>Fiches mémo imprimables</li>
+                        <li>Vocabulaire adapté niveau A2-B1</li>
+                        <li>Mises à jour 2026 incluses</li>
+                        <li>Accessible sur tous appareils</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Un investissement pour votre avenir</h2>
+                <p class="section-subtitle">Accès complet et illimité au pack de préparation à l'examen civique</p>
+            </div>
+            
+            <div class="pricing-card">
+                <div class="pricing-badge">🔥 Offre Spéciale</div>
+                <div class="pricing-header">
+                    <h3 class="pricing-title">Pack Réussite Complet</h3>
+                    <div class="pricing-price">
+                        <div class="pricing-amount">Prix Libre</div>
+                    </div>
+                    <p class="pricing-description">Payez ce que vous pouvez • Accès immédiat et illimité</p>
+                </div>
+                
+                <ul class="pricing-features">
+                    <li>
+                        <span class="pricing-check">✓</span>
+                        <span>Ebook PDF complet avec les 5 thèmes officiels (150+ pages)</span>
+                    </li>
+                    <li>
+                        <span class="pricing-check">✓</span>
+                        <span>Application d'entraînement avec 105 questions complètes</span>
+                    </li>
+                    <li>
+                        <span class="pricing-check">✓</span>
+                        <span>Examens blancs chronométrés en conditions réelles</span>
+                    </li>
+                    <li>
+                        <span class="pricing-check">✓</span>
+                        <span>Corrections détaillées et explications pédagogiques</span>
+                    </li>
+                    <li>
+                        <span class="pricing-check">✓</span>
+                        <span>Plan de révision sur 6 semaines adaptable</span>
+                    </li>
+                    <li>
+                        <span class="pricing-check">✓</span>
+                        <span>Mises à jour 2026 gratuites incluses</span>
+                    </li>
+                    <li>
+                        <span class="pricing-check">✓</span>
+                        <span>Accès illimité à vie sans abonnement</span>
+                    </li>
+                </ul>
+                
+                <div class="pricing-cta">
+                    <a href="https://payhip.com/b/vnYkg" class="btn btn-primary" target="_blank">
+                        🚀 Accéder au Pack Maintenant
+                    </a>
+                    <p class="pricing-guarantee">
+                        <span>✓</span> Téléchargement immédiat • Paiement sécurisé
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p style="font-size: 16px; font-weight: 600; margin-bottom: 16px;">Pack Réussite Examen Civique 2026</p>
+            <p><a href="https://payhip.com/b/vnYkg" target="_blank">Acheter le pack complet</a></p>
+            <p style="margin-top: 24px; font-size: 13px; opacity: 0.8;">© 2026 - Tous droits réservés</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Questions Database - Base complète de 100+ questions pour l'examen civique 2026
+        const questions = [
+            // THÈME 1 : PRINCIPES ET VALEURS DE LA RÉPUBLIQUE (20 questions)
+            {
+                question: "Quel est l'article 1 de la Déclaration des droits de l'homme et du citoyen de 1789 ?",
+                options: ["Tous les citoyens sont égaux", "Les hommes naissent et demeurent libres et égaux en droits", "La liberté est le droit fondamental", "La propriété est un droit sacré"],
+                reponse: 1,
+                explication: "Article 1 : 'Les hommes naissent et demeurent libres et égaux en droits. Les distinctions sociales ne peuvent être fondées que sur l'utilité commune.'"
+            },
+            {
+                question: "Quelle est la devise de la République française ?",
+                options: ["Liberté, Égalité, Fraternité", "Travail, Famille, Patrie", "Union et Force", "Justice et Vérité"],
+                reponse: 0,
+                explication: "La devise de la République française est 'Liberté, Égalité, Fraternité'. Elle apparaît dans la Constitution de 1958."
+            },
+            {
+                question: "Quelles sont les couleurs du drapeau français ?",
+                options: ["Rouge, blanc, vert", "Bleu, blanc, rouge", "Bleu, jaune, rouge", "Vert, blanc, rouge"],
+                reponse: 1,
+                explication: "Le drapeau tricolore bleu, blanc, rouge est l'emblème national depuis la Révolution française."
+            },
+            {
+                question: "Quel est le symbole de la République française représentant la liberté ?",
+                options: ["Le coq", "Marianne", "Le lion", "L'aigle"],
+                reponse: 1,
+                explication: "Marianne est la figure allégorique de la République française et incarne la liberté. On la trouve dans toutes les mairies."
+            },
+            {
+                question: "La France est-elle un État laïque ?",
+                options: ["Oui", "Non", "Seulement dans les écoles", "Seulement à Paris"],
+                reponse: 0,
+                explication: "La laïcité est un principe constitutionnel fondamental en France depuis 1905. L'État est neutre en matière religieuse."
+            },
+            {
+                question: "Que signifie le principe de laïcité ?",
+                options: ["Interdiction de toute religion", "Séparation de l'Église et de l'État", "Religion catholique obligatoire", "Liberté sans limites"],
+                reponse: 1,
+                explication: "La laïcité garantit la liberté de conscience et établit la séparation entre les religions et l'État."
+            },
+            {
+                question: "La liberté d'expression est-elle absolue en France ?",
+                options: ["Oui, sans aucune limite", "Non, elle a des limites légales", "Seulement pour les citoyens", "Seulement pour les journalistes"],
+                reponse: 1,
+                explication: "La liberté d'expression est garantie mais limitée par la loi (interdiction de l'incitation à la haine, diffamation, etc.)."
+            },
+            {
+                question: "Quel est le principe d'égalité en France ?",
+                options: ["Tous les citoyens sont égaux devant la loi", "Seuls les Français de naissance ont des droits", "Les hommes et les femmes ont des droits différents", "L'égalité dépend du niveau social"],
+                reponse: 0,
+                explication: "Le principe d'égalité garantit que tous les citoyens sont égaux devant la loi, sans distinction d'origine, de religion ou de sexe."
+            },
+            {
+                question: "Depuis quand les femmes ont-elles le droit de vote en France ?",
+                options: ["1789", "1848", "1944", "1958"],
+                reponse: 2,
+                explication: "Les femmes françaises ont obtenu le droit de vote en 1944. Elles ont voté pour la première fois en 1945."
+            },
+            {
+                question: "Qu'est-ce que la fraternité dans la devise républicaine ?",
+                options: ["L'obligation de famille", "La solidarité entre citoyens", "L'amitié obligatoire", "Le respect des aînés"],
+                reponse: 1,
+                explication: "La fraternité désigne la solidarité et l'entraide entre tous les citoyens de la République."
+            },
+            {
+                question: "En quelle année la loi de séparation des Églises et de l'État a-t-elle été votée ?",
+                options: ["1789", "1848", "1905", "1958"],
+                reponse: 2,
+                explication: "La loi de séparation des Églises et de l'État a été votée en 1905, établissant la laïcité."
+            },
+            {
+                question: "Que proclame l'article 2 de la Déclaration de 1789 ?",
+                options: ["Le droit de propriété", "Les droits naturels et imprescriptibles", "Le droit de vote", "Le droit au travail"],
+                reponse: 1,
+                explication: "L'article 2 proclame que 'le but de toute association politique est la conservation des droits naturels et imprescriptibles de l'homme : liberté, propriété, sûreté et résistance à l'oppression'."
+            },
+            {
+                question: "La discrimination est-elle interdite en France ?",
+                options: ["Oui, sous toutes ses formes", "Non", "Seulement au travail", "Seulement à l'école"],
+                reponse: 0,
+                explication: "La discrimination est strictement interdite en France sous toutes ses formes (origine, sexe, religion, handicap, etc.)."
+            },
+            {
+                question: "Qui peut porter plainte pour discrimination ?",
+                options: ["Uniquement les citoyens français", "Toute personne victime de discrimination", "Uniquement les associations", "Uniquement les fonctionnaires"],
+                reponse: 1,
+                explication: "Toute personne victime de discrimination peut porter plainte, quelle que soit sa nationalité."
+            },
+            {
+                question: "La liberté de religion signifie-t-elle que l'on peut tout faire au nom de sa religion ?",
+                options: ["Oui, c'est une liberté absolue", "Non, elle est limitée par la loi", "Oui, mais seulement en privé", "Non, sauf autorisation préfectorale"],
+                reponse: 1,
+                explication: "La liberté de religion est garantie mais elle ne peut justifier des actes contraires à la loi ou aux droits d'autrui."
+            },
+            {
+                question: "Quand la peine de mort a-t-elle été abolie en France ?",
+                options: ["1789", "1848", "1945", "1981"],
+                reponse: 3,
+                explication: "La peine de mort a été abolie en France en 1981 sous la présidence de François Mitterrand, avec la loi portée par Robert Badinter."
+            },
+            {
+                question: "Le blasphème est-il interdit en France ?",
+                options: ["Oui", "Non", "Seulement pour certaines religions", "Uniquement en public"],
+                reponse: 1,
+                explication: "Le blasphème n'est pas interdit en France. La liberté d'expression permet de critiquer les religions, dans le respect de la loi."
+            },
+            {
+                question: "Que signifie 'tous les citoyens sont égaux devant la loi' ?",
+                options: ["Tout le monde a les mêmes revenus", "La loi s'applique de la même façon à tous", "Tout le monde a le même métier", "Tout le monde vote pareil"],
+                reponse: 1,
+                explication: "L'égalité devant la loi signifie que la justice traite tous les citoyens de la même manière, sans privilège ni discrimination."
+            },
+            {
+                question: "La liberté de la presse est-elle garantie en France ?",
+                options: ["Oui", "Non", "Seulement pour certains journaux", "Uniquement avec autorisation"],
+                reponse: 0,
+                explication: "La liberté de la presse est garantie par la loi de 1881. Les journalistes peuvent informer librement dans le respect de la loi."
+            },
+            {
+                question: "Que représente le bonnet phrygien de Marianne ?",
+                options: ["La mode du XVIIIe siècle", "La liberté", "La sagesse", "La richesse"],
+                reponse: 1,
+                explication: "Le bonnet phrygien porté par Marianne symbolise la liberté. C'était le bonnet des esclaves affranchis dans l'Antiquité."
+            },
+
+            // THÈME 2 : INSTITUTIONS FRANÇAISES (25 questions)
+            {
+                question: "Quel président français a instauré la Ve République ?",
+                options: ["François Mitterrand", "Charles de Gaulle", "Georges Pompidou", "Valéry Giscard d'Estaing"],
+                reponse: 1,
+                explication: "Charles de Gaulle a instauré la Ve République en 1958 avec une nouvelle Constitution approuvée par référendum."
+            },
+            {
+                question: "Quelle est la durée du mandat présidentiel en France ?",
+                options: ["4 ans", "5 ans", "7 ans", "6 ans"],
+                reponse: 1,
+                explication: "Depuis 2002, le mandat présidentiel est de 5 ans (quinquennat), renouvelable une fois. Avant c'était 7 ans."
+            },
+            {
+                question: "Qui élit le Président de la République ?",
+                options: ["L'Assemblée nationale", "Le peuple au suffrage universel direct", "Le Sénat", "Le Conseil constitutionnel"],
+                reponse: 1,
+                explication: "Le Président de la République est élu directement par les citoyens français au suffrage universel direct pour 5 ans."
+            },
+            {
+                question: "Combien de députés sont élus à l'Assemblée nationale ?",
+                options: ["348", "577", "650", "750"],
+                reponse: 1,
+                explication: "L'Assemblée nationale est composée de 577 députés élus au suffrage universel direct pour 5 ans."
+            },
+            {
+                question: "Quel est le rôle principal du Sénat en France ?",
+                options: ["Voter les lois", "Élire le Président", "Juger les crimes", "Commander l'armée"],
+                reponse: 0,
+                explication: "Le Sénat, avec l'Assemblée nationale, forme le Parlement qui vote les lois. C'est la chambre haute du Parlement français."
+            },
+            {
+                question: "Qui nomme le Premier ministre ?",
+                options: ["L'Assemblée nationale", "Le Président de la République", "Le peuple", "Le Sénat"],
+                reponse: 1,
+                explication: "Le Premier ministre est nommé par le Président de la République. Il dirige l'action du Gouvernement."
+            },
+            {
+                question: "Quel est le rôle du Conseil constitutionnel ?",
+                options: ["Voter les lois", "Vérifier la constitutionnalité des lois", "Juger les crimes", "Gérer le budget"],
+                reponse: 1,
+                explication: "Le Conseil constitutionnel vérifie que les lois votées sont conformes à la Constitution."
+            },
+            {
+                question: "Quelle est la plus haute juridiction administrative en France ?",
+                options: ["La Cour de cassation", "Le Conseil d'État", "Le Tribunal administratif", "La Cour des comptes"],
+                reponse: 1,
+                explication: "Le Conseil d'État est la plus haute juridiction de l'ordre administratif en France."
+            },
+            {
+                question: "Combien de régions compte la France métropolitaine depuis 2016 ?",
+                options: ["13", "18", "22", "27"],
+                reponse: 0,
+                explication: "Depuis la réforme territoriale de 2016, la France métropolitaine compte 13 régions (plus 5 régions d'outre-mer)."
+            },
+            {
+                question: "Quel est le siège de l'Assemblée nationale ?",
+                options: ["Le Palais du Luxembourg", "Le Palais Bourbon", "L'Élysée", "Matignon"],
+                reponse: 1,
+                explication: "L'Assemblée nationale siège au Palais Bourbon à Paris."
+            },
+            {
+                question: "Où siège le Sénat ?",
+                options: ["Le Palais du Luxembourg", "Le Palais Bourbon", "L'Élysée", "Matignon"],
+                reponse: 0,
+                explication: "Le Sénat siège au Palais du Luxembourg à Paris."
+            },
+            {
+                question: "Combien de sénateurs compose le Sénat français ?",
+                options: ["348", "577", "650", "750"],
+                reponse: 0,
+                explication: "Le Sénat est composé de 348 sénateurs élus au suffrage universel indirect pour 6 ans."
+            },
+            {
+                question: "Quelle est la durée du mandat d'un député ?",
+                options: ["4 ans", "5 ans", "6 ans", "7 ans"],
+                reponse: 1,
+                explication: "Les députés sont élus pour 5 ans, sauf dissolution anticipée de l'Assemblée nationale."
+            },
+            {
+                question: "Quelle est la durée du mandat d'un sénateur ?",
+                options: ["4 ans", "5 ans", "6 ans", "9 ans"],
+                reponse: 2,
+                explication: "Les sénateurs sont élus pour 6 ans. Le Sénat est renouvelé par moitié tous les 3 ans."
+            },
+            {
+                question: "Qui peut dissoudre l'Assemblée nationale ?",
+                options: ["Le Premier ministre", "Le Président de la République", "Le peuple par référendum", "Le Sénat"],
+                reponse: 1,
+                explication: "Le Président de la République peut dissoudre l'Assemblée nationale et convoquer de nouvelles élections législatives."
+            },
+            {
+                question: "Que fait le Conseil des ministres ?",
+                options: ["Vote les lois", "Définit la politique du Gouvernement", "Juge les crimes", "Contrôle le budget"],
+                reponse: 1,
+                explication: "Le Conseil des ministres, présidé par le Président de la République, définit la politique du Gouvernement."
+            },
+            {
+                question: "Quelle est la plus haute juridiction judiciaire ?",
+                options: ["Le Conseil d'État", "La Cour de cassation", "Le Tribunal de grande instance", "Le Conseil constitutionnel"],
+                reponse: 1,
+                explication: "La Cour de cassation est la plus haute juridiction de l'ordre judiciaire (affaires civiles et pénales)."
+            },
+            {
+                question: "Combien de membres compte le Conseil constitutionnel ?",
+                options: ["7", "9", "11", "15"],
+                reponse: 1,
+                explication: "Le Conseil constitutionnel compte 9 membres nommés pour 9 ans, plus les anciens présidents de la République."
+            },
+            {
+                question: "Qui élit le maire d'une commune ?",
+                options: ["Les habitants de la commune", "Le conseil municipal", "Le préfet", "Le président de région"],
+                reponse: 1,
+                explication: "Le maire est élu par le conseil municipal, lui-même élu par les habitants de la commune."
+            },
+            {
+                question: "Quelle est la durée du mandat d'un maire ?",
+                options: ["4 ans", "5 ans", "6 ans", "7 ans"],
+                reponse: 2,
+                explication: "Le maire est élu pour 6 ans par le conseil municipal."
+            },
+            {
+                question: "Qui représente l'État dans un département ?",
+                options: ["Le maire", "Le préfet", "Le président du conseil départemental", "Le député"],
+                reponse: 1,
+                explication: "Le préfet est le représentant de l'État dans chaque département."
+            },
+            {
+                question: "Combien de fois peut-on être réélu Président de la République ?",
+                options: ["Sans limite", "Une fois", "Deux fois", "Jamais"],
+                reponse: 1,
+                explication: "Un président peut effectuer au maximum deux mandats consécutifs de 5 ans."
+            },
+            {
+                question: "Qui promulgue les lois en France ?",
+                options: ["Le Premier ministre", "Le Président de la République", "L'Assemblée nationale", "Le Conseil constitutionnel"],
+                reponse: 1,
+                explication: "Le Président de la République promulgue les lois après leur vote par le Parlement."
+            },
+            {
+                question: "Qu'est-ce qu'un référendum ?",
+                options: ["Un vote des députés", "Une consultation directe du peuple", "Une réunion du Conseil des ministres", "Un jugement du Conseil constitutionnel"],
+                reponse: 1,
+                explication: "Un référendum est une consultation directe des citoyens qui votent pour ou contre un projet de loi."
+            },
+            {
+                question: "En quelle année la Constitution de la Ve République a-t-elle été adoptée ?",
+                options: ["1946", "1958", "1962", "1981"],
+                reponse: 1,
+                explication: "La Constitution de la Ve République a été adoptée par référendum le 28 septembre 1958."
+            },
+
+            // THÈME 3 : HISTOIRE DE FRANCE (20 questions) - suite dans le prochain message
+
+        let currentQuestion = 0;
+        let score = 0;
+        let timer = 0;
+        let timerInterval;
+        let mode = '';
+        let isAnswered = false;
+
+        function shuffle(array) {
+            const newArray = [...array];
+            for (let i = newArray.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+            }
+            return newArray;
+        }
+
+        function showQCM() {
+            document.getElementById('qcm-app').classList.add('active');
+            document.getElementById('qcm-app').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function hideQCM() {
+            document.getElementById('qcm-app').classList.remove('active');
+            reset();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function startExamen() {
+            mode = 'examen';
+            currentQuestion = 0;
+            score = 0;
+            isAnswered = false;
+            const examQuestions = shuffle(questions).slice(0, Math.min(35, questions.length));
+            window.examQuestions = examQuestions;
+            timer = 25 * 60;
+            document.getElementById('score').innerHTML = '';
+            document.getElementById('reset').classList.remove('active');
+            showQuestion();
+            startTimer();
+        }
+
+        function startApprentissage() {
+            mode = 'apprentissage';
+            currentQuestion = 0;
+            score = 0;
+            isAnswered = false;
+            window.allQuestions = questions;
+            document.getElementById('timer').style.display = 'none';
+            document.getElementById('score').innerHTML = '';
+            document.getElementById('reset').classList.remove('active');
+            showQuestion();
+        }
+
+        function showQuestion() {
+            isAnswered = false;
+            const questionsList = mode === 'examen' ? window.examQuestions : window.allQuestions;
+            
+            if (currentQuestion >= questionsList.length) {
+                endQuiz();
+                return;
+            }
+            
+            const q = questionsList[currentQuestion];
+            document.getElementById('question-container').innerHTML = `
+                <div class="question">
+                    <h3>Question ${currentQuestion + 1} / ${questionsList.length}</h3>
+                    <p>${q.question}</p>
+                    ${q.options.map((opt, i) => 
+                        `<div class="option" onclick="selectAnswer(${i})">${String.fromCharCode(65+i)}. ${opt}</div>`
+                    ).join('')}
+                    <div class="info-box" style="display:none;" id="explication">
+                        <strong>💡 Explication :</strong><br><br>${q.explication || ''}
+                    </div>
+                </div>
+            `;
+        }
+
+        function selectAnswer(index) {
+            if (isAnswered) return;
+            isAnswered = true;
+
+            const questionsList = mode === 'examen' ? window.examQuestions : window.allQuestions;
+            const q = questionsList[currentQuestion];
+            
+            const options = document.querySelectorAll('.option');
+            options.forEach((el, i) => {
+                el.style.pointerEvents = 'none';
+                if (i === q.reponse) {
+                    el.classList.add('correct');
+                }
+                if (i === index && i !== q.reponse) {
+                    el.classList.add('incorrect');
+                }
+            });
+            
+            if (index === q.reponse) score++;
+            
+            document.getElementById('explication').style.display = 'block';
+            
+            setTimeout(() => {
+                currentQuestion++;
+                showQuestion();
+            }, mode === 'examen' ? 3000 : 4000);
+        }
+
+        function startTimer() {
+            const timerEl = document.getElementById('timer');
+            timerEl.style.display = 'block';
+            
+            timerInterval = setInterval(() => {
+                timer--;
+                const minutes = Math.floor(timer / 60);
+                const seconds = timer % 60;
+                timerEl.innerHTML = `⏱️ ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+                
+                if (timer <= 0) {
+                    endQuiz();
+                }
+            }, 1000);
+        }
+
+        function endQuiz() {
+            clearInterval(timerInterval);
+            const timerEl = document.getElementById('timer');
+            if (timerEl) timerEl.style.display = 'none';
+            document.getElementById('question-container').innerHTML = '';
+            
+            const questionsList = mode === 'examen' ? window.examQuestions : window.allQuestions;
+            const percentage = Math.round((score / questionsList.length) * 100);
+            const passed = percentage >= 80;
+            
+            document.getElementById('score').innerHTML = `
+                <h2>${passed ? '🎉 Félicitations ! Vous êtes prêt !' : '📚 Continuez à vous entraîner'}</h2>
+                <div style="font-size: 72px; font-weight: 900; margin: 32px 0; background: linear-gradient(135deg, ${passed ? 'var(--french-blue)' : 'var(--danger)'}, ${passed ? 'var(--accent-blue)' : '#dc2626'}); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                    ${percentage}%
+                </div>
+                <p style="font-size: 24px; margin-bottom: 16px; color: #1e293b;">${score} / ${questionsList.length} bonnes réponses</p>
+                ${passed ? 
+                    '<p style="color: #475569; font-size: 16px;">Vous avez dépassé le seuil de 80% requis pour l\'examen officiel ! 🎯</p>' : 
+                    '<p style="color: #475569; font-size: 16px;">Continuez à vous entraîner pour atteindre les 80% nécessaires</p>'
+                }
+            `;
+            document.getElementById('reset').classList.add('active');
+        }
+
+        function reset() {
+            currentQuestion = 0;
+            score = 0;
+            isAnswered = false;
+            clearInterval(timerInterval);
+            document.getElementById('score').innerHTML = '';
+            document.getElementById('reset').classList.remove('active');
+            document.getElementById('question-container').innerHTML = '';
+            const timerEl = document.getElementById('timer');
+            if (timerEl) {
+                timerEl.innerHTML = '';
+                timerEl.style.display = 'none';
+            }
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

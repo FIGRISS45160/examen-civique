@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Accès Pack Réussite Examen Civique 2026</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --french-blue: #0055A4;
+            --french-blue-dark: #003d7a;
+            --french-red: #EF4135;
+            --french-white: #FFFFFF;
+            --success: #10b981;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'DM Sans', system-ui, sans-serif;
+            background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+            color: #1e293b;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .french-accent {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--french-blue) 0%, var(--french-blue) 33.33%, var(--french-white) 33.33%, var(--french-white) 66.66%, var(--french-red) 66.66%, var(--french-red) 100%);
+            z-index: 1000;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 60px auto 40px;
+            background: white;
+            border-radius: 24px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 60px rgba(0, 85, 164, 0.15);
+            border: 3px solid transparent;
+            background-image: 
+                linear-gradient(white, white),
+                linear-gradient(135deg, var(--french-blue) 0%, var(--french-red) 50%, var(--french-blue) 100%);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--success), #059669);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 40px;
+            color: white;
+            animation: scaleIn 0.5s ease;
+        }
+        
+        @keyframes scaleIn {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: var(--french-blue);
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            color: #475569;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--french-blue);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--french-blue), var(--french-red));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+        }
+        
+        .download-card {
+            background: linear-gradient(135deg, rgba(0, 85, 164, 0.05), rgba(239, 65, 53, 0.03));
+            border: 2px solid rgba(0, 85, 164, 0.2);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+        
+        .download-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 85, 164, 0.15);
+            border-color: var(--french-blue);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--french-blue), var(--french-red));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+        }
+        
+        .card-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--french-blue);
+        }
+        
+        .card-description {
+            color: #475569;
+            font-size: 15px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, var(--french-blue), var(--french-blue-dark));
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 85, 164, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 85, 164, 0.4);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, var(--french-red), #dc2626);
+            box-shadow: 0 4px 15px rgba(239, 65, 53, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            box-shadow: 0 8px 25px rgba(239, 65, 53, 0.4);
+        }
+        
+        .instructions {
+            background: rgba(0, 85, 164, 0.05);
+            border-left: 4px solid var(--french-blue);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .instructions-title {
+            font-weight: 700;
+            color: var(--french-blue);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .instructions ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .instructions li {
+            padding: 8px 0;
+            color: #475569;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .instructions li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: bold;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        
+        .support-box {
+            background: linear-gradient(135deg, rgba(239, 65, 53, 0.08), rgba(0, 85, 164, 0.08));
+            border: 2px solid rgba(239, 65, 53, 0.2);
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .support-box h3 {
+            color: var(--french-red);
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .support-box p {
+            color: #475569;
+            margin-bottom: 15px;
+        }
+        
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .feature-item {
+            background: white;
+            border: 2px solid rgba(0, 85, 164, 0.1);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .feature-item:hover {
+            border-color: var(--french-blue);
+            transform: translateY(-2px);
+        }
+        
+        .feature-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--french-blue), var(--french-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .feature-label {
+            font-size: 13px;
+            color: #475569;
+            margin-top: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+                margin: 40px auto 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .download-card {
+                padding: 20px;
+            }
+            
+            .feature-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="french-accent"></div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="success-icon">✓</div>
+            <h1>🎉 Merci pour votre achat !</h1>
+            <p class="subtitle">Votre Pack Réussite Examen Civique 2026 est maintenant disponible</p>
+        </div>
+        
+        <!-- Contenu du Pack -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">📦</span>
+                Votre Pack Complet
+            </h2>
+            
+            <!-- Ebook PDF -->
+            <div class="download-card">
+                <div class="card-header">
+                    <div class="card-icon">📘</div>
+                    <div>
+                        <div class="card-title">Ebook PDF - Guide Complet</div>
+                    </div>
+                </div>
+                <p class="card-description">
+                    Guide professionnel de 80+ pages couvrant les 7 thèmes officiels de l'examen civique. 
+                    Includes : cours détaillés, dates clés, plan de révision 6 semaines.
+                </p>
+                <a href="ebook_examen_civique_2026.pdf" download class="btn">
+                    📥 Télécharger l'Ebook PDF
+                </a>
+                
+                <div class="instructions">
+                    <div class="instructions-title">
+                        💡 Comment utiliser l'ebook :
+                    </div>
+                    <ul>
+                        <li>Cliquez sur le bouton pour télécharger le PDF sur votre appareil</li>
+                        <li>Ouvrez-le avec n'importe quel lecteur PDF (Adobe Reader, navigateur web, etc.)</li>
+                        <li>Vous pouvez l'imprimer ou le lire sur écran</li>
+                        <li>Suivez le plan de révision sur 6 semaines (dernières pages)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Application QCM -->
+            <div class="download-card">
+                <div class="card-header">
+                    <div class="card-icon">💻</div>
+                    <div>
+                        <div class="card-title">Application QCM Interactive</div>
+                    </div>
+                </div>
+                <p class="card-description">
+                    105 questions complètes avec explications détaillées. Mode examen chronométré + mode apprentissage. 
+                    Utilisable directement dans votre navigateur, sur ordinateur ou mobile.
+                </p>
+                <a href="landing-page-bleu-pro.html" class="btn btn-secondary">
+                    🚀 Accéder à l'Application QCM
+                </a>
+                
+                <div class="instructions">
+                    <div class="instructions-title">
+                        💡 Comment utiliser l'application :
+                    </div>
+                    <ul>
+                        <li>Cliquez sur le bouton pour ouvrir l'application</li>
+                        <li>Choisissez entre Mode Examen (chronométré) ou Mode Apprentissage</li>
+                        <li>Répondez aux questions et consultez les explications</li>
+                        <li>Entraînez-vous jusqu'à obtenir 80% minimum</li>
+                        <li>L'application fonctionne sur tous vos appareils</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Ce que contient le pack -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">✨</span>
+                Ce que vous avez obtenu
+            </h2>
+            
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="feature-number">105</div>
+                    <div class="feature-label">Questions complètes</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-number">7</div>
+                    <div class="feature-label">Thèmes couverts</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-number">80+</div>
+                    <div class="feature-label">Pages de cours</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-number">2</div>
+                    <div class="feature-label">Modes d'entraînement</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Instructions de révision -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">📚</span>
+                Comment Réussir Votre Examen
+            </h2>
+            
+            <div class="instructions">
+                <div class="instructions-title">
+                    🎯 Plan d'action recommandé :
+                </div>
+                <ul>
+                    <li><strong>Semaines 1-5 :</strong> Lisez un chapitre de l'ebook par semaine + faites 20 questions sur l'application</li>
+                    <li><strong>Semaine 6 :</strong> Révision générale + 3 examens blancs en mode examen</li>
+                    <li><strong>Objectif :</strong> Atteindre 80% de bonnes réponses (32/40 minimum)</li>
+                    <li><strong>Astuce :</strong> Révisez 30 minutes par jour plutôt que 3h d'un coup</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Support -->
+        <div class="support-box">
+            <h3>❓ Besoin d'Aide ?</h3>
+            <p>Si vous rencontrez un problème technique ou avez des questions :</p>
+            <p style="font-weight: 600; color: var(--french-blue);">
+                Contactez-nous via le bouton "thumbs down" sur la page principale<br>
+                ou par email (ajoutez votre adresse de contact ici)
+            </p>
+        </div>
+        
+        <!-- Message de motivation -->
+        <div style="text-align: center; margin-top: 50px; padding: 30px; background: linear-gradient(135deg, rgba(0, 85, 164, 0.05), rgba(239, 65, 53, 0.03)); border-radius: 16px;">
+            <h2 style="font-family: 'Playfair Display', serif; color: var(--french-blue); margin-bottom: 15px;">
+                Bonne Chance ! 🇫🇷
+            </h2>
+            <p style="font-size: 16px; color: #475569;">
+                Avec ce pack complet et votre détermination,<br>
+                vous avez toutes les clés pour réussir votre examen civique<br>
+                et obtenir votre naturalisation française ou titre de séjour pluriannuel.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
