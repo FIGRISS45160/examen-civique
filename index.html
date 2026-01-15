@@ -1531,17 +1531,26 @@
                 }
             });
         });
-      <script>
+     <script>
+function showQCM() {
+  document.getElementById('qcm-app').style.display = 'block';
+  localStorage.setItem('packAchete', 'oui');
+}
+
 const questions = [
   {question:"Article 1 Code civil?",options:["Liberté","Égaux devant la loi","Fraternité","Propriété"],reponse:1,explication:"Tous citoyens égaux devant la loi."},
-  {question:"Déclaration 1789 Art1?",options:["Égalité","Libres et égaux","Liberté","Sécurité"],reponse:1,explication:"Les hommes naissent libres et égaux."}
-  // Ajoute tes 800+ questions ici
+  {question:"Déclaration 1789?",options:["Égalité","Libres et égaux","Liberté","Sécurité"],reponse:1,explication:"Les hommes naissent libres et égaux."},
+  {question:"Président USA 2026?",options:["Macron","Le Pen","Mélenchon","Trump"],reponse:3,explication:"Donald Trump réélu 2024, président 2026."}
 ];
 
-let currentQuestion=0,score=0,timer=0,mode='';
-function shuffle(a){return a.sort(()=>Math.random()-0.5);}
-function showQCM(){
-  document.getElementById('qcm-app').style.display='block';
+let currentQuestion=0,score=0;
+function startExamen() {
+  currentQuestion=0;score=0;
+  let examQuestions = questions.sort(()=>Math.random()-0.5).slice(0,10);
+  showQuestion(examQuestions);
+}
+function showQuestion(qlist)
+
   localStorage.setItem('packAchete','oui');
 }
 function startExamen(){
