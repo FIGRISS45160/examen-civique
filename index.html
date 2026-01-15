@@ -1531,13 +1531,21 @@
                 }
             });
         });
-        <script>
-            <script src="qcm.js"></script>
-    <script src="questions.js"></script> 
-    <script>function showQCM(){...}</script>
-  document.getElementById('qcm-app').style.display = 'block';
-  localStorage.setItem('packAchete', 'oui');
+      <script>
+const questions = [
+  {question:"Article 1 Code civil?",options:["Liberté","Égaux devant la loi","Fraternité","Propriété"],reponse:1,explication:"Tous citoyens égaux devant la loi."},
+  {question:"Déclaration 1789 Art1?",options:["Égalité","Libres et égaux","Liberté","Sécurité"],reponse:1,explication:"Les hommes naissent libres et égaux."}
+  // Ajoute tes 800+ questions ici
+];
+
+let currentQuestion=0,score=0,timer=0,mode='';
+function shuffle(a){return a.sort(()=>Math.random()-0.5);}
+function showQCM(){
+  document.getElementById('qcm-app').style.display='block';
+  localStorage.setItem('packAchete','oui');
 }
-</script>
+function startExamen(){
+  mode='examen';currentQuestion
+
 </body>
 </html>
